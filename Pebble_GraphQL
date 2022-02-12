@@ -1,0 +1,17 @@
+query getDevices {
+      pebble_device_record (
+        limit: 1, 
+        order_by:{timestamp: desc},
+        where: {
+          
+          imei:{_eq:"###########"},
+          latitude: {_neq: "200.0000000"} }) 
+  		{
+      	latitude, longitude, timestamp, temperature , 
+        
+        light, accelerometer, gyroscope, humidity, pressure, temperature, gas_resistance, vbat, snr,
+        , signature, __typename
+        
+      }
+
+    }# Write your query or mutation here
